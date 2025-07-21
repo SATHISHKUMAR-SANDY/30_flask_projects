@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+{% block title %}Appointments{% endblock %}
+{% block content %}
+<h2>📅 Appointments {% if date %}on {{ date }}{% endif %}</h2>
+
+<form method="get" class="mb-3">
+    <input type="date" name="date" class="form-control" value="{{ date }}" onchange="this.form.submit()">
+</form>
+
+<div class="row">
+    {% for app in appointments %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="{{ url_for('static', filename='icons/calendar.png') }}" class="card-img-top" height="100">
+            <div class="card-body">
+                <h5 class="card-title">{{ app.name }}</h5>
+                <p><strong>Date:</strong> {{ app.date }}</p>
+                <p><strong>Time:</strong> {{ app.time }}</p>
+                <a href="{{ url_for('appointment_detail', app_id=app.id) }}" class="btn btn-sm btn-info">Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

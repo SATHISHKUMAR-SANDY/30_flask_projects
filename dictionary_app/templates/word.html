@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %}
+{% block title %}Word Meaning{% endblock %}
+{% block content %}
+<h2>🧾 Word: {{ word }}</h2>
+
+<img src="{{ url_for('static', filename='icons/' + icon) }}" style="height: 80px;">
+
+{% if meaning %}
+    <p><strong>Meaning ({{ 'English' if lang == 'en' else 'Tamil' }}):</strong> {{ meaning }}</p>
+{% else %}
+    <p style="color: red;">❌ No meaning found for this word.</p>
+{% endif %}
+
+<a href="{{ url_for('search') }}">🔙 Search Again</a>
+{% endblock %}

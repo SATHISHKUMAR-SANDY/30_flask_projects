@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block title %}Contact Details{% endblock %}
+{% block content %}
+<h2>{{ contact.name }}</h2>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Email:</strong> {{ contact.email }}</li>
+    <li class="list-group-item"><strong>Phone:</strong> {{ contact.phone }}</li>
+    <li class="list-group-item"><strong>City:</strong> {{ contact.city }}</li>
+</ul>
+{% endblock %}

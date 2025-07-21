@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Contact{% endblock %}
+{% block content %}
+<h2>Add New Contact</h2>
+<form method="post" class="border p-4 rounded bg-light">
+    <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Phone:</label>
+        <input type="text" name="phone" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>City:</label>
+        <input type="text" name="city" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Contact</button>
+</form>
+{% endblock %}

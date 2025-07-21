@@ -1,0 +1,26 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+{{ recipe.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>{{ recipe.title }}</h2>
+    <img src="{{ url_for('static', filename=recipe.image) }}" class="img-fluid mb-3" alt="{{ recipe.title }}" style="max-height: 300px;">
+
+    <h4>Ingredients</h4>
+    <ul>
+        {% for item in recipe.ingredients %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <h4>Instructions</h4>
+    <ol>
+        {% for step in recipe.instructions %}
+            <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+</div>
+{% endblock %}

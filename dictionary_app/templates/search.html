@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+{% block title %}Search Word{% endblock %}
+{% block content %}
+<h2>📘 Dictionary Search</h2>
+<form method="post">
+    <label>Enter a Word:</label>
+    <input type="text" name="word" required>
+
+    <label>Select Language:</label>
+    <select name="lang">
+        <option value="en">English</option>
+        <option value="ta">Tamil</option>
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+{% endblock %}

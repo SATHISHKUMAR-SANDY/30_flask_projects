@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('quiz') }}">
+    {% for quiz in quiz_data %}
+        <p><strong>Q{{ loop.index }}. {{ quiz.question }}</strong></p>
+
+        {% if quiz.image %}
+            <img src="{{ url_for('static', filename='images/' + quiz.image) }}" width="150"><br>
+        {% endif %}
+
+        {% set q_index = loop.index0 %}
+        {% for option in quiz.options %}
+            <input type="radio" name="question{{ q_index }}" value="{{ option }}" required>
+            <label>{{ option }}</label><br>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

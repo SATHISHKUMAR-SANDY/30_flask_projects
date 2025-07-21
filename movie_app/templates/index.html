@@ -1,0 +1,31 @@
+{% extends "layout/base.html" %}
+{% block title %}Movie Recommendations{% endblock %}
+
+{% block content %}
+<h2>Browse Movies</h2>
+
+<form method="get" class="mb-3">
+    <label>Filter by Genre:</label>
+    <select name="genre" onchange="this.form.submit()" class="form-select w-25 d-inline">
+        <option value="">All</option>
+        {% for g in ['Sci-Fi', 'Romance', 'Action'] %}
+        <option value="{{ g }}" {% if genre_filter == g %}selected{% endif %}>{{ g }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<div class="row">
+    {% for movie in movies %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='posters/' + movie.poster) }}" class="card-img-top" style="height: 300px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ movie.title }}</h5>
+                <p><strong>Genre:</strong> {{ movie.genre }}</p>
+                <a href="{{ url_for('movie_detail', movie_id=movie.id) }}" class="btn btn-primary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Lost or Found Item{% endblock %}
+{% block content %}
+<h2>➕ Add New Item</h2>
+<form method="post">
+    <div class="mb-3">
+        <label>Title:</label>
+        <input name="title" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Status (Lost/Found):</label>
+        <select name="status" class="form-select" required>
+            <option>Lost</option>
+            <option>Found</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Image Filename (upload manually to /static/items/):</label>
+        <input name="image" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label>Description:</label>
+        <textarea name="description" rows="3" class="form-control" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Add Item</button>
+</form>
+{% endblock %}

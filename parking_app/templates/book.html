@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block title %}Book Slot{% endblock %}
+{% block content %}
+<h3>Booking Slot {{ slot.slot }}</h3>
+<form method="post">
+    <p>Date: {{ slot.date }}</p>
+    <button type="submit" class="btn btn-success">Confirm Booking</button>
+    <a href="{{ url_for('show_slots') }}" class="btn btn-outline-secondary">Cancel</a>
+</form>
+{% endblock %}

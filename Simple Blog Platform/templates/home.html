@@ -1,0 +1,25 @@
+{% extends 'layout/base.html'%}
+
+{% block title %}
+
+HOME TEMPLATE
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Home Page</h1>
+
+
+<h2>Post Links</h2>
+
+<ul>
+{% for blog in blogs %}
+<li> <a href="{{url_for('full_post',id = blog['id'])}}" >{{blog['title']}}</a>  </li>
+{% endfor %}
+</ul>
+
+
+
+{% endblock %}

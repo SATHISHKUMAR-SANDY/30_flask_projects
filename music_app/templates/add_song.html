@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Song{% endblock %}
+{% block content %}
+<h2>Add Song to {{ playlist.name }}</h2>
+<form method="post">
+    <label>Song Title:</label>
+    <input type="text" name="title" required>
+
+    <label>Album Art Filename (in /static/album/):</label>
+    <input type="text" name="album_art" placeholder="e.g. rock.jpg" required>
+
+    <button type="submit">Add Song</button>
+</form>
+{% endblock %}

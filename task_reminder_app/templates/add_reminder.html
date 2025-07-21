@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Reminder{% endblock %}
+{% block content %}
+<h2>Add New Reminder</h2>
+
+<form method="post" class="bg-light p-4 rounded shadow-sm">
+    <div class="mb-3">
+        <label for="task" class="form-label">Task</label>
+        <input type="text" name="task" id="task" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="due" class="form-label">Due Date</label>
+        <input type="date" name="due" id="due" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Reminder</button>
+</form>
+
+{% endblock %}

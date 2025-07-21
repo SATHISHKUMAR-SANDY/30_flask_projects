@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+<h2>Newsletter Signup</h2>
+<form method="post" class="bg-white p-4 rounded shadow-sm">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" required class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" required class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Subscribe</button>
+</form>
+{% endblock %}

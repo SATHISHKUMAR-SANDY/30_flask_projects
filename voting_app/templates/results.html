@@ -1,0 +1,20 @@
+{% extends "layout/base.html" %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<h2 class="mb-4">Voting Results</h2>
+<div class="row">
+    {% for opt in options %}
+    <div class="col-md-6 mb-3">
+        <div class="card p-3 {% if opt.id == selected %}border-success{% endif %}">
+            <img src="{{ url_for('static', filename='icons/' + opt.icon) }}" class="img-fluid mb-2" style="height: 150px;">
+            <h5>{{ opt.name }}</h5>
+            <p>Votes: {{ opt.votes }}</p>
+            {% if opt.id == selected %}
+            <span class="badge bg-success">You Voted</span>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<a href="{{ url_for('vote_page') }}" class="btn btn-outline-primary mt-4">← Back to Vote</a>
+{% endblock %}

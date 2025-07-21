@@ -1,0 +1,28 @@
+{% extends 'layout/base.html'%}
+
+{% block title %}
+
+FULL POST
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1>{{post.id}}</h1>
+<h1>{{post.title}}</h1>
+<h1>{{post.date}}</h1>
+<ul>
+{% for tag in post.tags%}
+<li>{{tag}}</li>
+{% endfor %}
+</ul>
+<p>{{post.summary}}</p>
+
+
+
+
+
+
+{% endblock %}

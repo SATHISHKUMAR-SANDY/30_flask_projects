@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+{% block title %}Reminders{% endblock %}
+{% block content %}
+<h2>All Reminders</h2>
+
+{% if reminders %}
+    <ul class="list-group">
+        {% for r in reminders %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>{{ r.task }}</strong><br>
+                    <small>Due: {{ r.due }}</small>
+                </div>
+                <a href="{{ url_for('delete_reminder', rid=r.id) }}" class="btn btn-danger btn-sm">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No reminders found.</p>
+{% endif %}
+
+{% endblock %}

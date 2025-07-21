@@ -1,0 +1,18 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Thank You!
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <div class="alert alert-success" role="alert">
+        <h1 class="mb-4">Feedback Submitted Successfully!</h1>
+    </div>
+    
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="{{ url_for('form') }}" class="btn btn-primary">Return to Feedback Form</a>
+        <a href="{{ url_for('show') }}" class="btn btn-outline-secondary">Show All Feedbacks</a>
+    </div>
+</div>
+{% endblock %}

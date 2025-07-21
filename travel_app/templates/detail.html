@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+{% block title %}Destination Detail{% endblock %}
+{% block content %}
+{% if destination %}
+    <h2>{{ destination.name }} ({{ destination.region }})</h2>
+    <img src="{{ url_for('static', filename='images/' + destination.image) }}">
+    <p>{{ destination.desc }}</p>
+{% else %}
+    <p>Destination not found.</p>
+{% endif %}
+<a href="{{ url_for('list_destinations') }}">Back to List</a>
+{% endblock %}

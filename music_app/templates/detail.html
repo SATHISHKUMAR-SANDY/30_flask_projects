@@ -1,0 +1,17 @@
+{% extends "layout/base.html" %}
+{% block title %}Playlist Details{% endblock %}
+{% block content %}
+<h2>{{ playlist.name }} ({{ playlist.genre }})</h2>
+<a href="{{ url_for('add_song', playlist_id=playlist.id) }}">Add Song</a>
+
+<ul>
+    {% for song in playlist.songs %}
+        <li>
+            <b>{{ song.title }}</b><br>
+            <img src="{{ url_for('static', filename='album/' + song.album_art) }}">
+        </li>
+    {% else %}
+        <p>No songs yet.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

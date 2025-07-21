@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title  %}
+
+ABOUT TEMPLATE
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="text-center" >Search NEW BLOGS</h1>
+
+
+<form class="row d-flex flex-column  align-items-center g-3" method="get" action="/results">
+  <div class="col-md-3">
+    <label for="inputEmail4" class="form-label">Search blogs</label>
+    <input placeholder="Enter blog title" type="text" name ="title" value="{{query}}" class="form-control" id="inputEmail4" required>
+  </div>
+
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </div>
+</form>
+
+
+
+{% endblock  %}

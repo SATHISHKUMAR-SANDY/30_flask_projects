@@ -1,0 +1,22 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<h2>Result</h2>
+<p>Your Marks: {{ marks }}</p>
+
+{% if marks >= 90 %}
+    <p class="grade A">Grade: A</p>
+{% elif marks >= 80 %}
+    <p class="grade B">Grade: B</p>
+{% elif marks >= 70 %}
+    <p class="grade C">Grade: C</p>
+{% elif marks >= 60 %}
+    <p class="grade D">Grade: D</p>
+{% else %}
+    <p class="grade F">Grade: F (Fail)</p>
+{% endif %}
+
+<a href="{{ url_for('form') }}">Try Again</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}All Expenses{% endblock %}
+
+{% block content %}
+<h2>All Expenses {% if category %} in {{ category }} {% endif %}</h2>
+
+<form method="get">
+    <label>Filter by Category:</label>
+    <input type="text" name="category" value="{{ category or '' }}">
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    {% for e in expenses %}
+        <li>
+            <img src="{{ url_for('static', filename='money.png') }}" class="icon">
+            <strong>{{ e.title }}</strong> - ₹{{ e.amount }} 
+            ({{ e.category }}) - 
+            <a href="{{ url_for('expense_detail', expense_id=e.id) }}">Details</a>
+        </li>
+    {% else %}
+        <p>No expenses found.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

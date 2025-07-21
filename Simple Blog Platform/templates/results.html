@@ -1,0 +1,29 @@
+
+
+
+{% extends 'layout/base.html' %}
+
+
+{% block title  %}
+
+ABOUT TEMPLATE
+{% endblock %}
+
+
+{% block content %}
+
+
+
+<h1>Results for: "{{ query }}"</h1>
+    <ul>
+        {% for blog in blogs %}
+        <li>{{ blog.title }}</li>
+        {% else %}
+        <li>No blogs found</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Search</a>
+
+
+
+    {% endblock  %}

@@ -1,0 +1,13 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Check Weather{% endblock %}
+
+{% block content %}
+<h2>Enter City Name</h2>
+<form method="POST" action="{{ url_for('check_weather') }}">
+    <div class="mb-3">
+        <input type="text" name="city" class="form-control" placeholder="e.g., Chennai" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Check Weather</button>
+</form>
+{% endblock %}

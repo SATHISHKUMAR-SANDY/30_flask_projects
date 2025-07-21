@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Destination{% endblock %}
+{% block content %}
+<h2>Add New Destination</h2>
+<form method="post">
+    <label>Destination Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Region:</label>
+    <select name="region">
+        <option value="Europe">Europe</option>
+        <option value="Asia">Asia</option>
+        <option value="Africa">Africa</option>
+    </select>
+
+    <label>Image Filename (in /static/images/):</label>
+    <input type="text" name="image" placeholder="e.g. paris.jpg">
+
+    <label>Description:</label>
+    <textarea name="desc"></textarea>
+
+    <button type="submit">Add Destination</button>
+</form>
+{% endblock %}

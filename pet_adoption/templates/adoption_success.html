@@ -1,0 +1,10 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Adoption Success{% endblock %}
+
+{% block content %}
+<h2>🎉 Success!</h2>
+<p>Thank you for adopting <strong>{{ name }}</strong>!</p>
+<p>Adoption Status: {{ status }}</p>
+<a href="{{ url_for('index') }}">Return to Pet List</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Poll Results{% endblock %}
+
+{% block content %}
+<h2>Poll Results</h2>
+<ul>
+    {% for lang, count in votes.items() %}
+        <li class="{% if lang == user_vote %}highlight{% endif %}">
+            {{ lang }} — {{ count }} votes
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('poll') }}">Back to poll</a>
+{% endblock %}

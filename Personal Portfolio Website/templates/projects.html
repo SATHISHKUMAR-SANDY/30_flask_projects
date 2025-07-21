@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title  %}
+
+PROJECT TEMPLATE
+{% endblock %}
+
+{% block content %}
+
+<h1>PROJECT Page</h1>
+
+<ul>
+  {% for project in projects %}
+    <li>
+      <a href="{{ url_for('project_detail', project_id=project.id) }}">
+        {{ project.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock  %}

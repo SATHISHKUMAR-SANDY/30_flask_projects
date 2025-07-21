@@ -1,0 +1,12 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Expense Detail{% endblock %}
+
+{% block content %}
+<h2>Expense Details</h2>
+<p><strong>Title:</strong> {{ expense.title }}</p>
+<p><strong>Amount:</strong> ₹{{ expense.amount }}</p>
+<p><strong>Category:</strong> {{ expense.category }}</p>
+<a href="{{ url_for('index') }}">← Back to All Expenses</a>
+{% endblock %}
+

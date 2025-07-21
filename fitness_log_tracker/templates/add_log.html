@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+{% block title %}Add Workout Log{% endblock %}
+{% block content %}
+<h2>Add Workout Log</h2>
+<form method="POST" class="p-3 bg-white shadow-sm border rounded">
+    <div class="mb-2">
+        <label>Workout Type</label>
+        <input name="workout" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <label>Duration (mins)</label>
+        <input type="number" name="duration" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <label>Date</label>
+        <input type="date" name="date" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <label>Icon</label>
+        <select name="icon" class="form-select">
+            <option value="running.png">Running</option>
+            <option value="cycling.png">Cycling</option>
+            <option value="gym.png">Gym</option>
+        </select>
+    </div>
+    <button class="btn btn-success">Submit</button>
+</form>
+{% endblock %}

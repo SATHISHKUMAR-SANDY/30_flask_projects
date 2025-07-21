@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Weather in {{ city }}{% endblock %}
+
+{% block content %}
+<h2>Weather in {{ city }}</h2>
+<img src="{{ url_for('static', filename=data.icon) }}" alt="{{ data.desc }}" width="100">
+<p><strong>Temperature:</strong> {{ data.temp }}</p>
+<p><strong>Description:</strong> {{ data.desc }}</p>
+<a href="{{ url_for('home') }}" class="btn btn-secondary">Back</a>
+{% endblock %}

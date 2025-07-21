@@ -1,0 +1,27 @@
+{% extends "layout/base.html" %}
+{% block title %}Destinations{% endblock %}
+{% block content %}
+<h2>Travel Bucket List</h2>
+
+<form method="get">
+    <label>Filter by Region:</label>
+    <select name="region">
+        <option value="">-- All --</option>
+        <option value="Europe">Europe</option>
+        <option value="Asia">Asia</option>
+        <option value="Africa">Africa</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+<ul>
+    {% for d in destinations %}
+        <li>
+            <h3><a href="{{ url_for('destination_detail', dest_id=d.id) }}">{{ d.name }}</a> ({{ d.region }})</h3>
+            <img src="{{ url_for('static', filename='images/' + d.image) }}">
+        </li>
+    {% else %}
+        <p>No destinations yet.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

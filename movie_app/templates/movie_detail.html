@@ -1,0 +1,29 @@
+{% extends "layout/base.html" %}
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block content %}
+<h2>{{ movie.title }}</h2>
+<img src="{{ url_for('static', filename='posters/' + movie.poster) }}" class="img-fluid mb-3" style="max-height: 400px;">
+<p><strong>Genre:</strong> {{ movie.genre }}</p>
+
+<h4 class="mt-4">Recommend this Movie</h4>
+<form method="POST" class="bg-white border rounded p-3 shadow-sm mb-4">
+    <div class="mb-2">
+        <input name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="mb-2">
+        <textarea name="reason" class="form-control" placeholder="Why do you recommend it?" required></textarea>
+    </div>
+    <button class="btn btn-success">Submit Recommendation</button>
+</form>
+
+<h4>Recommendations</h4>
+{% for r in movie.recommendations %}
+<div class="border p-3 mb-2 bg-light rounded shadow-sm">
+    <strong>{{ r.name }}</strong> says:
+    <p>{{ r.reason }}</p>
+</div>
+{% else %}
+<p>No recommendations yet.</p>
+{% endfor %}
+{% endblock %}

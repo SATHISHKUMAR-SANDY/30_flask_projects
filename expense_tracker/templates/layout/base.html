@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Expense Tracker{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+        .container { background: white; padding: 20px; border-radius: 10px; max-width: 700px; margin: auto; }
+        nav a { margin-right: 10px; }
+        .icon { width: 30px; vertical-align: middle; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('add_expense') }}">Add Expense</a>
+        </nav>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

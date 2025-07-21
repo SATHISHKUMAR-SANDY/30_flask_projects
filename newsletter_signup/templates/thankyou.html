@@ -1,0 +1,6 @@
+{% extends "layout/base.html" %}
+{% block title %}Thank You{% endblock %}
+{% block content %}
+<h2 class="text-success">Thanks for signing up!</h2>
+<a href="{{ url_for('signup') }}" class="btn btn-primary mt-3">Back to Signup</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Entry Detail{% endblock %}
+
+{% block content %}
+<h2>Entry by {{ entry.name }}</h2>
+<img src="{{ url_for('static', filename='avatar.png') }}" class="avatar" alt="avatar">
+<p><strong>Message:</strong> {{ entry.message }}</p>
+<a href="{{ url_for('index') }}">← Back to All Entries</a>
+{% endblock %}

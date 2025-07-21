@@ -1,0 +1,23 @@
+{% extends 'layout/base.html'%}
+
+{% block title %}
+
+HOME TEMPLATE
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Event List</h1>
+
+<ul>
+
+{% for event in events %}
+
+<li><a href="{{url_for('Events',id = event['id'])}}">{{event['title']}}</a></li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

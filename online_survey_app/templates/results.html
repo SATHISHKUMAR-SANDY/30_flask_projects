@@ -1,0 +1,25 @@
+{% extends "layout/base.html" %}
+{% block title %}Survey Results{% endblock %}
+{% block content %}
+<h2>📊 Survey Results</h2>
+
+<form method="get">
+    <label>Filter by Age Group:</label>
+    <select name="age" onchange="this.form.submit()">
+        <option value="">All</option>
+        <option value="under18" {% if selected == 'under18' %}selected{% endif %}>Under 18</option>
+        <option value="18to40" {% if selected == '18to40' %}selected{% endif %}>18 to 40</option>
+        <option value="above40" {% if selected == 'above40' %}selected{% endif %}>Above 40</option>
+    </select>
+</form>
+
+<ul>
+    {% for r in responses %}
+        <li>
+            <strong>{{ r.name }}</strong> ({{ r.age }} yrs): {{ r.feedback }}
+        </li>
+    {% else %}
+        <li>No responses found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

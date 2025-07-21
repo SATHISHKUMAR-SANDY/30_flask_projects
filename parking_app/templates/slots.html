@@ -1,0 +1,26 @@
+{% extends "layout/base.html" %}
+{% block title %}Available Slots{% endblock %}
+{% block content %}
+<h2>Parking Slots for {{ date }}</h2>
+<form method="get">
+    <label>Select Date:</label>
+    <input type="date" name="date" value="{{ date }}">
+    <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+</form>
+<hr>
+<div class="row">
+    {% for s in slots %}
+    <div class="col-md-4 mb-3">
+        <div class="slot-card {% if s.available %}available{% else %}unavailable{% endif %}">
+            <h5>Slot {{ s.slot }}</h5>
+            <p>Status: {{ "Available" if s.available else "Booked" }}</p>
+            {% if s.available %}
+            <a href="{{ url_for('book', slot_id=s.id) }}" class="btn btn-success btn-sm">Book Now</a>
+            {% else %}
+            <button class="btn btn-secondary btn-sm" disabled>Unavailable</button>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

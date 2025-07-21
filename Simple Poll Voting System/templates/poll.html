@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Vote Poll{% endblock %}
+
+{% block content %}
+<h2>{{ question }}</h2>
+<form method="POST" action="{{ url_for('poll') }}">
+    {% for opt in options %}
+        <div class="option">
+            <input type="radio" name="language" value="{{ opt }}" required>
+            <label>{{ opt }}</label>
+        </div>
+    {% endfor %}
+    <button type="submit">Vote</button>
+</form>
+{% endblock %}

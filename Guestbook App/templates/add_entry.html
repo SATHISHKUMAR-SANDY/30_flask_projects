@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Add Entry{% endblock %}
+
+{% block content %}
+<h2>Add a Guestbook Entry</h2>
+<form method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Message:</label><br>
+    <textarea name="message" rows="4" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Travel Bucket List{% endblock %}</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 20px; }
+        .container { background: white; padding: 20px; border-radius: 10px; }
+        img { max-height: 200px; }
+        nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="{{ url_for('list_destinations') }}">All Destinations</a>
+            <a href="{{ url_for('add_destination') }}">Add New</a>
+        </nav>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

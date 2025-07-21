@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}To-Do App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📝 My To-Do List</h1>
+    <a href="{{ url_for('home') }}">All Tasks</a> |
+    <a href="{{ url_for('home') }}?completed=true">Completed Tasks</a>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

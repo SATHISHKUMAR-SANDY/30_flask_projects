@@ -1,0 +1,29 @@
+{% extends "layout/base.html" %}
+{% block title %}Job Listings{% endblock %}
+{% block content %}
+<h2>💼 Job Listings {% if dept %} - Dept: {{ dept }}{% endif %}</h2>
+
+<form method="get" class="mb-3">
+    <select name="dept" class="form-select" onchange="this.form.submit()">
+        <option value="">-- Filter by Department --</option>
+        <option value="Engineering" {% if dept == 'Engineering' %}selected{% endif %}>Engineering</option>
+        <option value="Design" {% if dept == 'Design' %}selected{% endif %}>Design</option>
+    </select>
+</form>
+
+<div class="row">
+    {% for job in jobs %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename='logos/' ~ job.logo) }}" class="card-img-top" height="200">
+            <div class="card-body">
+                <h5 class="card-title">{{ job.title }}</h5>
+                <p class="card-text"><strong>Company:</strong> {{ job.company }}</p>
+                <p><strong>Dept:</strong> {{ job.dept }}</p>
+                <a href="{{ url_for('job_detail', job_id=job.id) }}" class="btn btn-sm btn-outline-info">View</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

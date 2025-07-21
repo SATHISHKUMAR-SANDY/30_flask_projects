@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Enter Grade{% endblock %}
+
+{% block content %}
+<h2>Student Grade Calculator</h2>
+<form method="POST">
+    <label for="marks">Enter your marks (out of 100):</label><br>
+    <input type="number" name="marks" min="0" max="100" step="0.01" required><br><br>
+    <button type="submit">Calculate Grade</button>
+</form>
+{% endblock %}

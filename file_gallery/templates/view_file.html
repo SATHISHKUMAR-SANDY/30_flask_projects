@@ -1,0 +1,8 @@
+{% extends "layout/base.html" %}
+{% block title %}View File{% endblock %}
+{% block content %}
+<h2>Viewing: {{ filename }}</h2>
+<div class="text-center">
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" class="img-fluid rounded shadow">
+</div>
+{% endblock %}

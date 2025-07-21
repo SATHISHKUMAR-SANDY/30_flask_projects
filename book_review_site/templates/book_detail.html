@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+{% block title %}{{ book.title }}{% endblock %}
+{% block content %}
+<h2>{{ book.title }}</h2>
+<img src="{{ url_for('static', filename='covers/' + book.cover) }}" class="img-fluid mb-3" style="max-height: 400px;">
+
+<h4>Add a Review</h4>
+<form method="POST" class="p-3 bg-white border rounded shadow-sm mb-4">
+    <div class="mb-2">
+        <input name="name" class="form-control" placeholder="Your Name" required>
+    </div>
+    <div class="mb-2">
+        <textarea name="comment" class="form-control" placeholder="Write a review..." required></textarea>
+    </div>
+    <div class="mb-2">
+        <select name="rating" class="form-select">
+            {% for i in range(1, 6) %}
+            <option value="{{ i }}">{{ i }} Star{% if i > 1 %}s{% endif %}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button class="btn btn-success">Submit Review</button>
+</form>
+
+<h4>Reviews</h4>
+{% for review in book.reviews %}
+<div class="border rounded p-3 mb-2 bg-white shadow-sm">
+    <strong>{{ review.name }}</strong> - {{ review.rating }}★
+    <p>{{ review.comment }}</p>
+</div>
+{% else %}
+<p>No reviews yet.</p>
+{% endfor %}
+{% endblock %}

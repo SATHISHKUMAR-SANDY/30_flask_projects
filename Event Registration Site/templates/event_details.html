@@ -1,0 +1,28 @@
+{% extends 'layout/base.html'%}
+
+{% block title %}
+
+HOME TEMPLATE
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Event Details</h1>
+
+<ul>
+
+
+<li>{{event.id}}</li>
+<li>{{event.title}}</li>
+<li>{{event.location}}</li>
+<li>{{event.description}}</li>
+{% for tag in event.tags %}
+<li>{{tag}}</li>
+{% endfor %}
+
+</ul>
+
+
+{% endblock %}

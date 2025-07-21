@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #eef1f5;
+    padding: 30px;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grade {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.grade.A { color: green; }
+.grade.B { color: blue; }
+.grade.C { color: orange; }
+.grade.D { color: brown; }
+.grade.F { color: red; }
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+}
