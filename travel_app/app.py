@@ -46,4 +46,4 @@ def destination_detail(dest_id):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run() 
